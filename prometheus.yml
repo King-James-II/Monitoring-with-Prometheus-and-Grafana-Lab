@@ -1,0 +1,17 @@
+# my global config
+global:
+  scrape_interval: 15s # Set the scrape interval to every 15 seconds. The default is every 1 minute.
+
+scrape_configs:          
+  - job_name: 'node'
+  
+    static_configs:
+      - targets: ['jamesccraig-9101.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai']
+        labels:
+          group: 'monitoring_node_ex1'
+      - targets: ['jamesccraig-9102.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai']
+        labels:
+          group: 'monitoring_node_ex2'
+      - targets: ['jamesccraig-9103.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai']
+        labels:
+          group: 'monitoring_node_ex3'
